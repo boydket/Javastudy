@@ -82,4 +82,35 @@ public class MathExam {
 
         return -1;
     }
+
+    public int exam120831(int n) throws Exception {
+        if (n<=0) {
+            throw new Exception("n이 0보다 작거나 같아서는 안 됩니다.");
+        }
+        if (n>1000) {
+            throw new Exception("n이 1000보다 커서는 안 됩니다.");
+        }
+
+        int sum=0;
+
+        for(int i=2; i<=n; i+=2)
+        {
+            sum+=i;
+        }
+        return sum;
+    }
+
+    public int[] exam120813(int num) throws Exception {
+        if (num<1 || num>100) {
+            throw new Exception("n은 1보다 작거나 100보다 커서는 안됩니다.");
+        }
+
+        int length=(num+1)/2;
+        int[] result = new int[length];
+        int index=0;
+        for (int i=1; i<=num; i+=2) {
+            result[index++] = i;
+        }
+        return result;
+    }
 }

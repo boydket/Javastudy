@@ -109,4 +109,39 @@ public class newexamTest {
         });
         System.out.println(exception.toString());
     }
+
+    @Test
+    public void exam120831() throws Exception {
+        System.out.println("exam120831");
+        MathExam math = new MathExam();
+
+        assertThat(math.exam120831(10)).isEqualTo(30);
+        assertThat(math.exam120831(12)).isEqualTo(42);
+
+        assertThatThrownBy(() -> math.exam120831(-1))
+                .isInstanceOf(Exception.class);
+
+        Throwable exception = assertThrows(Exception.class, () -> {
+            math.exam120831(1001);
+        });
+        System.out.println(exception.toString());
+    }
+
+    @Test
+    public void exam120813() throws Exception {
+        System.out.println("exam120813");
+        MathExam math = new MathExam();
+
+        assertThat(math.exam120813(9)).isEqualTo(new int[] {1,3,5,7,9});
+        assertThat(math.exam120813(15)).isEqualTo(new int[] {1,3,5,7,9,11,13,15});
+
+        assertThatThrownBy(() -> math.exam120813(0))
+                .isInstanceOf(Exception.class);
+
+        Throwable exception = assertThrows(Exception.class, () -> {
+            math.exam120813(101);
+        });
+        System.out.println(exception.toString());
+
+    }
 }
