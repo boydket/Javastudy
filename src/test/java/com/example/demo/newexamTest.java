@@ -15,6 +15,7 @@ public class newexamTest {
         // when 테스트를 실시
 
         //then 실제값과 기대값을 비교해서 테스트한다
+        compare004();
         assertThat(-1).isEqualTo(math.subTest001(2,3));
 
         //Exception 예외가 발생해야지만 정상 동작으로 인식한다.
@@ -53,5 +54,25 @@ public class newexamTest {
                 .isInstanceOf(Exception.class);
         assertThatThrownBy(() -> math.mathTest004(7,50001))
                 .isInstanceOf(Exception.class);
+    }
+
+    @Test
+    public void average005() throws Exception {
+        // given
+        MathExam math = new MathExam();
+        int[] nums1 = new int[]{2,4,6,8,10};
+
+        // when
+        // then
+        //assertThat(6).isEqualTo(math.mathTest005(nums1));
+        //assertThat(5).isEqualTo(math.mathTest005(nums1));
+        assertThatThrownBy(() -> math.mathTest005(new int[] {}))
+                .isInstanceOf(Exception.class);
+        assertThatThrownBy(() -> math.mathTest005(new int[] {0}))
+                .isInstanceOf(Exception.class);
+        /*Throwable exception = assertThrows(Exception.class, () -> {
+            math.mathTest005(new int[] {});
+        });
+        System.out.println(exception.toString());*/
     }
 }
