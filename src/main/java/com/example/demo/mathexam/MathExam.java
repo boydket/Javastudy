@@ -2,7 +2,7 @@ package com.example.demo.mathexam;
 
 public class MathExam {
 
-    public int subTest001(int n1, int n2) throws Exception{
+    public int subTest0001(int n1, int n2) throws Exception{
         System.out.println("subtest");
         if(n1<-50000 || n1 > 50000) {
             throw new Exception("num1 값은 -50000보다 작거나, num1 값은 50000 보다 큽니다...");
@@ -13,7 +13,7 @@ public class MathExam {
         return n1-n2;
     }
 
-    public int mathTest002(int n1, int n2) throws Exception {
+    public int mathTest002(int n1, int n2) throws Exception { //두 수의 곱
         System.out.println("mathtest002");
         if (n1<0 || n1>100) {
             throw new Exception("num1 값은 0~100 사이의 값이어야 합니다.");
@@ -24,7 +24,7 @@ public class MathExam {
         return n1*n2;
     }
 
-    public int mathTest004(int n1, int n2) throws Exception {
+    public int mathTest004(int n1, int n2) throws Exception { //숫자 비교하기
         System.out.println("mathtest004");
         if (n1<0 || n1>10000) {
             throw new RuntimeException("num1 값은 0~10000 사이의 값이어야 합니다.");
@@ -37,7 +37,7 @@ public class MathExam {
         else return -1;
     }
 
-    public double mathTest005(int[] numbers) throws Exception {
+    public double mathTest005(int[] numbers) throws Exception { //배열의 평균값
         System.out.println("mathtest005");
         if ( numbers == null ) {
             throw new Exception("numbers는 null이 아니어야 합니다.");
@@ -52,5 +52,34 @@ public class MathExam {
         double ans=sum/(double)numbers.length;
 
         return ans;
+    }
+
+    public int exam120820(int age) throws Exception {   //나이 출력
+        if(age<=0 || age>120) {
+            throw new Exception("age의 값은 0보다 작거나 같거나 120보다 커서는 안됩니다.");
+        }
+
+        int ans=2022-age+1;
+        return ans;
+    }
+
+    public int exam120829(int angle) throws Exception {
+        if (angle<=0) {
+            throw new Exception("angle의 값은 0보다 커야 합니다.");
+        }
+        if (angle>180) {
+            throw new Exception("angle의 값은 180보다 커서는 안됩니다.");
+        }
+
+        if (angle>0 && angle<90)
+            return 1;
+        else if (angle==90)
+            return 2;
+        else if (angle>90 && angle<180)
+            return 3;
+        else if (angle==180)
+            return 4;
+
+        return -1;
     }
 }

@@ -15,15 +15,15 @@ public class newexamTest {
         // when 테스트를 실시
 
         //then 실제값과 기대값을 비교해서 테스트한다
-        compare004();
-        assertThat(math.subTest001(2,3)).isEqualTo(1);
+        //compare004();
+        assertThat(math.subTest0001(2,3)).isEqualTo(1);
 
         //Exception 예외가 발생해야지만 정상 동작으로 인식한다.
       /* assertThatThrownBy(() -> math.subTest001(70000, 7))
                .isInstanceOf(Exception.class);*/
        //RuntimeException 예외가 발생해야지만 정상 동작으로 인식한다.
-        Throwable exception = assertThrows(RuntimeException.class, () -> {
-            math.subTest001(2330, 50002);
+        Throwable exception = assertThrows(Exception.class, () -> {
+            math.subTest0001(2330, 50002);
         });
         System.out.println(exception.toString());
 
@@ -74,5 +74,39 @@ public class newexamTest {
             math.mathTest005(new int[] {});
         });
         System.out.println(exception.toString());*/
+    }
+
+    @Test
+    public void exam120820() throws Exception {
+        System.out.println("exam120820");
+        MathExam math = new MathExam();
+        assertThat(math.exam120820(40)).isEqualTo(1983);
+        assertThat(math.exam120820(23)).isEqualTo(2000);
+
+        assertThatThrownBy(() -> math.exam120820(121))
+                .isInstanceOf(Exception.class);
+
+        Throwable exception = assertThrows(Exception.class, () -> {
+            math.exam120820(-1);
+        });
+        System.out.println(exception.toString());
+    }
+
+    @Test
+    public void exam120829() throws Exception {
+        System.out.println("120829");
+        MathExam math = new MathExam();
+
+        assertThat(math.exam120829(70)).isEqualTo(1);
+        assertThat(math.exam120829(91)).isEqualTo(3);
+        assertThat(math.exam120829(180)).isEqualTo(4);
+
+        assertThatThrownBy(() -> math.exam120829(-1))
+                .isInstanceOf(Exception.class);
+
+        Throwable exception = assertThrows(Exception.class, () -> {
+            math.exam120829(181);
+        });
+        System.out.println(exception.toString());
     }
 }
