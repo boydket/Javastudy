@@ -160,4 +160,21 @@ public class newexamTest {
         assertThat(math.exam120585(new int[] {149, 188, 192, 178}, 167)).isEqualTo(3);
         assertThat(math.exam120585(new int[] {180, 120, 140}, 190)).isEqualTo(0);
     }
+
+    @Test
+    public void exam120818() throws Exception {
+        System.out.println("exam120818");
+        MathExam math = new MathExam();
+
+        Throwable ex1 = assertThrows(Exception.class, () -> math.exam120818(0));    //price가 10보다 작을 때
+        System.out.println(ex1.toString());
+        Throwable ex2 = assertThrows(Exception.class, () -> math.exam120818(1000010)); //price가 1000000보다 클 때
+        System.out.println(ex2.toString());
+        Throwable ex3 = assertThrows(Exception.class, () -> math.exam120818(10001));  //price의 1의 자리가 0이 아닐 때
+        System.out.println(ex3.toString());
+
+        assertThat(math.exam120818(100000)).isEqualTo(95000);   //10만원 이상
+        assertThat(math.exam120818(300000)).isEqualTo(270000);  //30만원 이상
+        assertThat(math.exam120818(500000)).isEqualTo(400000);  //50만원 이상
+    }
 }
