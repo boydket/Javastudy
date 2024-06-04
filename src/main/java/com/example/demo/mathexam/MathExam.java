@@ -165,6 +165,11 @@ public class MathExam {
     }
 
     public int exam120837(int hp) throws Exception {
-        return 0;
+        if (hp<0) {
+            throw new Exception("hp가 0보다 작아서는 안됩니다.");
+        }
+        else if (hp>1000) {
+            throw new Exception("hp가 1000보다 커서는 안됩니다.");
+        }
     }
 }
