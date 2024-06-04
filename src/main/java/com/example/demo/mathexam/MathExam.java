@@ -171,5 +171,6 @@ public class MathExam {
         else if (hp>1000) {
             throw new Exception("hp가 1000보다 커서는 안됩니다.");
         }
+        ;
     }
 }
