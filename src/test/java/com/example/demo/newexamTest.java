@@ -177,4 +177,9 @@ public class newexamTest {
         assertThat(math.exam120818(580000)).isEqualTo(464000);
 //        assertThat(math.exam120818(500000)).isEqualTo(400000);  //50만원 이상
     }
+
+    @Test
+    public void exam120837() throws Exception {
+        System.out.println("exam120837");
+    }
 }
