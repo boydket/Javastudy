@@ -152,15 +152,19 @@ public class MathExam {
             throw new Exception(String.format("price 값은 10원 단위로(1의 자리가 0) 주어집니다."));
         }
         double result = 0;
-        if(price >= 100000){
+        if(price >= 100000 && price < 300000){
             result = price * 0.95;
         }
-        if(price >= 300000 || price < 500000){
+        if(price >= 300000 && price < 500000){
             result = price * 0.9;
         }
         if(price >= 500000){
             result = price * 0.8;
         }
         return (int) result;
+    }
+
+    public int exam120837(int hp) throws Exception {
+        return 0;
     }
 }
