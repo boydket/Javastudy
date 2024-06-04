@@ -180,6 +180,43 @@ public class newexamTest {
 
     @Test
     public void exam120837() throws Exception {
+        /*System.out.println("exam120837"); //내가 작성한 테스트
+        MathExam math = new MathExam();
+
+        Throwable ex1 = assertThrows(Exception.class, () -> math.exam120837(-1));
+        System.out.println(ex1.toString());
+        Throwable ex2 = assertThrows(Exception.class, () -> math.exam120837(1001));
+        System.out.println(ex2.toString());
+
+        //assertThat(math.exam120837(23)).isEqualTo(6);
+        //assertThat(math.exam120837(24)).isEqualTo(7);
+        assertThat(math.exam120837(999)).isEqualTo(202);*/
+
+        //조원이 작성한 테스트
         System.out.println("exam120837");
-    }
+        MathExam math = new MathExam();
+
+        Throwable ex1 = assertThrows(Exception.class, () -> math.exam120837(-1));    //0보다 작을 때
+        System.out.println(ex1.toString());
+        Throwable ex2 = assertThrows(Exception.class, () -> math.exam120837(1001)); //1000보다 클 때
+        System.out.println(ex2.toString());
+
+        assertThat(math.exam120837(23)).isEqualTo(5);
+        assertThat(math.exam120837(24)).isEqualTo(6);
+        assertThat(math.exam120837(999)).isEqualTo(201);
+     }
+
+     @Test
+     public void exam120839() throws Exception {
+        System.out.println("exam120839test");
+        MathExam math = new MathExam();
+
+         Throwable ex1 = assertThrows(Exception.class, () -> math.exam120839(""));    //0보다 작을 때
+         System.out.println(ex1.toString());
+         Throwable ex2 = assertThrows(Exception.class, () -> math.exam120839("105")); //1000보다 클 때
+         System.out.println(ex2.toString());
+
+         assertThat(math.exam120839("2")).isEqualTo("0");
+         assertThat(math.exam120839("205")).isEqualTo("052");
+     }
 }

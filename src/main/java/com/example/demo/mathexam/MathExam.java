@@ -164,6 +164,7 @@ public class MathExam {
         return (int) result;
     }
 
+    //개미 군단
     public int exam120837(int hp) throws Exception {
         if (hp < 0) {
             throw new Exception("hp가 0보다 작아서는 안됩니다.");
@@ -184,9 +185,36 @@ public class MathExam {
         }
         if (hp < 3) {
             answer += hp/1;
-  
+
         }
 
+        return answer;
+    }
+
+    //가위바위보
+    public String exam120839(String rsp) throws Exception {
+        String answer = "";
+        if (rsp.length()<=0 || rsp.length()>100) {
+            throw new Exception("rsp의 길이는 0보다 작거나 100보다 커서는 안됩니다.");
+        }
+
+        for(int i=0; i<rsp.length(); i++) {
+            char ch=rsp.charAt(i);
+            if (ch!='0' && ch!='2' && ch!='5') {
+                throw new Exception("rsp는 숫자 0,2,5 로만 이루어져야 합니다.");
+            }
+        }
+        for(int i=0; i<rsp.length(); i++) {
+            if (rsp.charAt(i)=='2') {
+                answer = answer + "0";
+            }
+            else if (rsp.charAt(i)=='0') {
+                answer = answer + "5";
+            }
+            else if (rsp.charAt(i)=='5') {
+                answer = answer + "2";
+            }
+        }
         return answer;
     }
 }
