@@ -113,4 +113,34 @@ public class MathExam {
         }
         return result;
     }
+
+    public int exam120585(int[] array, int height) throws Exception{
+        int length=array.length;
+
+              //내가 작성한 코드
+        if(length<1 || length>100){
+            throw new Exception("array의 길이는 1보다 작거나 100보다 커서는 안됩니다.");
+        }
+        if(height<1 || height>200) {
+            throw new Exception("height는 1보다 작거나 200보다 커서는 안됩니다.");
+        }
+        for(int i=0; i<length; i++) {
+            if(array[i]<1 || array[i]>200) {
+                throw new Exception("array의 원소의 값은 1보다 작거나 200보다 커서는 안됩니다.");
+            }
+        }
+
+
+       // 강사님은 throw new Exception(String.format("height [%d]는 ~~", height); 를 사용했다.
+        //서식을 넣으려고?
+
+        int num=0;
+
+        for (int i=0; i<length; i++) {
+            if(array[i]>height) {
+                num++;
+            }
+        }
+        return num;
+    }
 }
