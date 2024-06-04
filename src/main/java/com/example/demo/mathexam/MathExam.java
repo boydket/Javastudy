@@ -217,4 +217,71 @@ public class MathExam {
         }
         return answer;
     }
+
+    //짝수 홀수 개수
+    public int[] exam120824(int[] num_list) throws Exception {
+        if (num_list.length<=0 || num_list.length>100) {
+            throw new Exception("num_list의 길이는 0이거나 100보다 클 수 없습니다.");
+        }
+        for (int i=0; i<num_list.length; i++) {
+            if(num_list[i]<0 || num_list[i]>1000) {
+                throw new Exception("num_list의 원소의 값은 0보다 작거나 1000보다 클 수 없습니다.");
+            }
+        }
+
+        int[] answer = new int[]{};
+
+        int odd=0;
+        int even=0;
+
+        for(int i=0; i<num_list.length; i++) {
+            if(num_list[i]%2==1) {
+                odd++;
+            }
+            else even++;
+        }
+        answer = new int[2];
+
+        answer[0]=even;
+        answer[1]=odd;
+
+        return answer;
+    }
+
+
+    //가장 큰 수 찾기
+    public int[] exam120899(int[] array) throws Exception {
+        int[] answer={};
+
+        if(array.length<1 || array.length>100) {
+            throw new Exception("array의 길이는 1보다 작거나 100보다 커서는 안됩니다.");
+        }
+        for(int i=0; i<array.length; i++) {
+            if(array[i]<0 || array[i]>1000) {
+                throw new Exception("array의 원소의 값은 0보다 작거나 1000보다 커서는 안됩니다.");
+            }
+        }
+
+        for(int i=0; i<array.length-1; i++)
+            for(int j=i+1; j<array.length; j++) {
+                if(array[i]==array[j])
+                    throw new Exception("array 배열에 중복된 숫자가 있어서는 안됩니다.");
+            }
+
+        int index=0;
+        int num=array[0];
+
+        for(int i=0; i<array.length; i++) {
+            if(num<array[i]) {
+                num=array[i];
+                index=i;
+            }
+        }
+
+        answer=new int[2];
+        answer[0]=num;
+        answer[1]=index;
+
+        return answer;
+    }
 }
