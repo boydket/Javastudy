@@ -1,4 +1,5 @@
 package com.example.demo.mathexam;
+import java.util.Scanner;
 
 public class MathExam {
 
@@ -283,5 +284,48 @@ public class MathExam {
         answer[1]=index;
 
         return answer;
+    }
+
+    public int codeup1045() {
+        Scanner sc = new Scanner(System.in);
+
+        return 0;
+    }
+
+    public int codeup1173(int hour, int minute) throws Exception{
+        if (hour<0 || hour>23) {
+            throw new Exception("시는 0보다 작거나 23보다 클 수 없습니다.");
+        }
+        if (minute<0 || minute>59) {
+            throw new Exception("분은 0보다 작거나 59보다 클 수 없습니다.");
+        }
+
+        if (minute>=30) {
+            minute-=30;
+        }
+        else if(minute<30) {
+            minute=60-minute;
+            if(hour==0) {
+                hour=24;
+            }
+            else {
+                hour--;
+            }
+
+        }
+
+        int answer=hour*100+minute;
+        return answer;
+    }
+
+    public int codeup1180(int n) throws Exception {
+        if (n<1 || n>99) {
+            throw new Exception("n은 1보다 작거나 99보다 클 수 없습니다.");
+        }
+
+        int ans=0;
+        ans=n/10*2;
+
+        return ans;
     }
 }

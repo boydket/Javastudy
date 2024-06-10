@@ -6,6 +6,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.Scanner;
+
 public class newexamTest {
     @Test
     public void subtract001() throws Exception{
@@ -248,5 +250,70 @@ public class newexamTest {
 
         assertThat(math.exam120899(new int[]{1,8,3})).isEqualTo(new int[]{8,1});
         assertThat(math.exam120899(new int[]{9,10,11,8})).isEqualTo(new int[]{11,2});
+     }
+
+     //진수 출력
+     @Test
+     public void numberPint() throws Exception {
+        int x = 0b1011;
+        int y = 0206;
+        int z = 0x2A0F;
+
+        int a = 65; //내가 작성한 a,b,c 강사님이 어케햇는진 ㅁㄹ
+        int b = 98;
+        int c= 67;
+
+        System.out.println(String.format("10진수 : x=%d, y=%d, z=%d\n", x, y, z));
+        System.out.println(String.format("8진수 : x=%o, y=%o, z=%o\n", x, y, z));
+        System.out.println(String.format("16진수 : x=%x, y=%X, z=%X\n", x, y, z));
+        System.out.println(String.format("Char : x=%c, y=%c, z=%c\n", x, y, z));
+
+         System.out.println(String.format("10진수 : a=%d, b=%d, c=%d\n", x, y, z));
+         System.out.println(String.format("8진수 : a=%o, b=%o, c=%o\n", x, y, z));
+         System.out.println(String.format("16진수 : a=%x, b=%X, c=%X\n", x, y, z));
+         System.out.println(String.format("Char : a=%c, b=%c, c=%c\n", x, y, z));
+     }
+
+     @Test
+    public void myexam() {
+//         Scanner sc = new Scanner(System.in);
+//
+//         String t = sc.next();
+//         sc.close();
+
+         String t="2022.1.3";
+         String[] ymd = t.split("\\.");
+
+         int year=Integer.parseInt(ymd[0]);
+         int month=Integer.parseInt(ymd[1]);
+         int day=Integer.parseInt(ymd[2]);
+
+         System.out.println(String.format("%04d.%02d.%02d", year, month, day));
+     }
+
+     @Test
+    public void codeup1173test() throws Exception {
+        MathExam math = new MathExam();
+
+        assertThat(math.codeup1173(11,40)).isEqualTo(1110);
+
+        assertThatThrownBy(() -> math.codeup1173(24,10))
+                 .isInstanceOf(Exception.class);
+
+         Throwable ex1 = assertThrows(Exception.class, () -> math.codeup1173(11,60));    //0보다 작을 때
+         System.out.println(ex1.toString());
+     }
+
+     @Test
+    public void codeup1180test() throws Exception {
+        MathExam math = new MathExam();
+
+        assertThat(math.codeup1180(90)).isEqualTo(18);
+
+        assertThatThrownBy(() -> math.codeup1180(0))
+                .isInstanceOf(Exception.class);
+
+        Throwable ex1 = assertThrows(Exception.class, () -> math.codeup1180(100));
+        System.out.println(ex1.toString());
      }
 }
