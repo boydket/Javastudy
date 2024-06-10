@@ -324,8 +324,16 @@ public class MathExam {
         }
 
         int ans=0;
-        ans=n/10*2;
+        ans=(n/10+(n%10)*10)*2;
 
-        return ans;
+        ans%=100;
+        
+        System.out.println(ans);
+        if(ans<=50) {
+            System.out.println("GOOD");
+        }
+        else {
+            System.out.println("OH MY GOD");
+        }
     }
 }
