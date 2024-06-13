@@ -327,7 +327,7 @@ public class MathExam {
         ans=(n/10+(n%10)*10)*2;
 
         ans%=100;
-        
+
         System.out.println(ans);
         if(ans<=50) {
             System.out.println("GOOD");
@@ -335,5 +335,91 @@ public class MathExam {
         else {
             System.out.println("OH MY GOD");
         }
+
+        return 0;
+    }
+
+    public double codeup1205(double a, double b) throws Exception {
+
+        double max;
+
+        max = a+b;
+        if (max<a-b) {
+            max = a-b;
+        }
+        if (max<b-a) {
+            max = b-a;
+        }
+        if (max<a*b) {
+            max=a*b;
+        }
+        if (max<a/b) {
+            max=a/b;
+        }
+        if (max<b/a) {
+            max=b/a;
+        }
+        if (max<Math.pow(a,b)) {
+            max=Math.pow(a,b);
+        }
+        if (max<Math.pow(b,a)) {
+            max=Math.pow(b,a);
+        }
+        System.out.println(String.format("%.6f", max));
+
+        return 0.1;
+    }
+    
+    public void codeup1226() throws Exception {
+        Scanner input = new Scanner(System.in);
+        String first = input.nextLine();
+        String second = input.nextLine();
+
+        String[] arr1 = getStrings(first);
+
+        String[] arr2 = first.split(" ");
+        int[] n2 = new int[arr1.length];
+
+        for(int i=0; i<n2.length; i++) {
+            n2[i] = Integer.parseInt(arr2[i]);
+        }
+
+    }
+
+    private static String[] getStrings(String first) {
+        String[] arr1 = first.split(" ");
+        int[] n1 = new int[arr1.length];
+
+        for(int i=0; i<n1.length; i++) {
+            n1[i] = Integer.parseInt(arr1[i]);
+        }
+        return arr1;
+    }
+
+    public void codeup3015(int n, int m, Student[] sts) throws Exception {
+        if (n<3 || n>100) {
+            throw new Exception("n은 3보다 작거나 100보다 클 수 없습니다.");
+        }
+        if (m<1 || m>n) {
+            throw new Exception("m은 1보다 작거나 n보다 클 수 없습니다.");
+        }
+
+        for (int i=0; i<n-1; i++) {
+            for (int j=i; j<n; j++) {
+                if (sts[i].getScore() > sts[j].getScore()) {
+                    Student tmp = sts[j];
+                    sts[j] = sts[i];
+                    sts[i] = tmp;
+                }
+            }
+        }
+
+        for (int i=0; i<m; i++) {
+            System.out.println(sts[i].getName());
+        }
+    }
+
+    public void memberservice() {
+
     }
 }

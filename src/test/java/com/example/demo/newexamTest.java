@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import com.example.demo.mathexam;
 
 import java.util.Scanner;
 
@@ -315,5 +316,12 @@ public class newexamTest {
 
         Throwable ex1 = assertThrows(Exception.class, () -> math.codeup1180(100));
         System.out.println(ex1.toString());
+     }
+
+     @Test
+    public void codeup3015test() throws Exception {
+        MathExam math = new MathExam();
+
+        //Student[] s = new Student[10];
      }
 }
