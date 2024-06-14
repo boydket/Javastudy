@@ -5,9 +5,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //codeup3015();
+        int a = 10;
+        int b = 20;
+        int sum = add(a, b);
+        System.out.println("Sum: " + sum);
+        while(true) {
+            sum++;
+        }
     }
-    public static void codeup3015() throws Exception{
-        System.out.println("3015 하하하");
+
+    public static int add(int x, int y) {
+        return x + y;
     }
+
+
+
+
 }
