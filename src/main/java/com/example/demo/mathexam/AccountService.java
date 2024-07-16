@@ -4,12 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AccountService {
+    /**
+     * 계좌 배열 인스턴스 변수 (객체 프로퍼티, 인스턴스 필드)
+     */
     private List<Account> accountList = new ArrayList<>();
 
+    /**
+     * 계좌 배열 깅리를 int 형으로 리턴한다
+     * @return
+     */
     public int size() {
         return this.accountList.size();
     }
 
+    /**
+     * 계좌 목록을 전체 삭제하고 Clear 한다.
+     * clear Accounts all array elements. size will be 0.
+     */
     public void clear() {
         this.accountList.clear();
     }

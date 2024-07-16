@@ -422,4 +422,62 @@ public class MathExam {
     public void memberservice() {
 
     }
+
+    public void codeup1602(String num) throws Exception {
+        Scanner sc = new Scanner(System.in);
+
+        boolean m=false;
+        boolean d=false;
+        int n1;
+        double n2;
+
+        for(int i=0; i<num.length(); i++) {
+            char ch=num.charAt(i);
+            if(ch=='-') {
+                m=true;
+            }
+            else if(ch=='.') {
+                d=true;
+            }
+        }
+
+        if(d) {
+            n2=Double.parseDouble(num);
+            if(n2<0) {
+                n2=-n2;
+            }
+            System.out.println(n2);
+        }
+        else {
+            n1=Integer.parseInt(num);
+            if(n1<0) {
+                n1=-n1;
+            }
+            System.out.println(n1);
+        }
+    }
+
+    public int addRecrusive(int n) {
+        if (n<=0) {
+            return 0;
+        }
+        else {
+            return n+addRecrusive(n-1);
+        }
+    }
+    public int codeup1905(int n) throws Exception {
+        if (n<1 || n>100) {
+            throw new Exception("n은 1보다 작거나 100보다 클 수 없습니다.");
+        }
+        return addRecrusive(n);
+
+    }
+
+    public int codeup1916(int n) throws Exception {
+        if (n<1 || n>200) {
+            throw new Exception("n은 1보다 작거나 200보다 클 수 없습니다.");
+        }
+
+
+    }
 }

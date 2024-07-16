@@ -8,6 +8,8 @@ public class BankApplication {
         ac = new Account[100];
         top = 0;
     }
+
+
     public void Create(String num, String name, int balance) {
         ac[top] = new Account(num,name,balance);
         top++;

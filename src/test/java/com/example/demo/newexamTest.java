@@ -323,4 +323,20 @@ public class newexamTest {
 
         //Student[] s = new Student[10];
      }
+
+     @Test
+    public void codeup1602test() throws Exception {
+
+     }
+
+     @Test
+    public void codeup1905test() throws Exception {
+        MathExam math = new MathExam();
+
+        assertThat(math.codeup1905(10)).isEqualTo(55);
+         assertThatThrownBy(() -> math.codeup1905(0))
+                 .isInstanceOf(Exception.class);
+         assertThatThrownBy(() -> math.codeup1905(10001))
+                 .isInstanceOf(Exception.class);
+     }
 }
